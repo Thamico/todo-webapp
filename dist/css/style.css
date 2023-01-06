@@ -1,5 +1,69 @@
-.task-card {
+/* Style the form */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #eee;
+}
+
+/* Style the form elements */
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px;
   border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/* Style the submit button */
+form input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Style the label elements */
+label {
+  font-weight: bold;
+}
+
+/* Style the select element */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #f1f1f1;
+  border: none;
+  font-size: 16px;
   padding: 10px;
-  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Style the option elements */
+option {
+  background-color: #f1f1f1;
+}
+
+option[value="Low"] {
+  background-color: #b3ffb3;
+}
+
+option[value="Medium"] {
+  background-color: #ffffb3;
+}
+
+option[value="High"] {
+  background-color: #ffb3b3;
 }

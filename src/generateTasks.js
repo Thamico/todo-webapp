@@ -1,3 +1,5 @@
+// todo-list.js
+
 class Task {
   constructor(title, description, dueDate, priority) {
     this.title = title;
@@ -13,7 +15,8 @@ class Task {
 
 const todoList = [];
 
-const addTaskForm = document.getElementById("container");
+const addTaskForm = document.getElementById("add-task-form");
+
 addTaskForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -38,7 +41,13 @@ addTaskForm.addEventListener("submit", (event) => {
   updateTodoList();
 });
 
-const updateTodoList = () => {
+const addTaskButton = document.getElementById("add-task-button");
+addTaskButton.addEventListener("click", () => {
+  addTaskForm.submit();
+  updateTodoList();
+});
+
+export const updateTodoList = () => {
   const todoListContainer = document.getElementById("todo-list");
   todoListContainer.innerHTML = "";
 
@@ -53,4 +62,3 @@ const updateTodoList = () => {
     todoListContainer.appendChild(taskCard);
   }
 };
-export default generateTasks;

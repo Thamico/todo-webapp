@@ -9,16 +9,22 @@
   </head>
   <body>
     <div id="content"></div>
-    <form id="add-task-form">
-      <label for="title-input">Title:</label>
-      <input id="title-input" type="text" />
-      <br />
-      <label for="description-input">Description:</label>
-      <input id="description-input" type="text" />
-      <br />
-      <label for="due-date-input">Due date:</label>
-      <input id="due-date-input" type="date" />
+    <form>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+      <label for="due-date">Due Date:</label>
+      <input type="date" id="due-date" name="due-date" required />
+      <label for="priority">Priority:</label>
+      <select id="priority" name="priority" required>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <input type="submit" value="Submit" />
     </form>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
