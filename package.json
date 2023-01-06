@@ -1,0 +1,19 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "keep tack of todos",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thamico/todo-webapp.git"
+  },
+  "author": "Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thamico/todo-webapp/issues"
+  },
+  "homepage": "https://github.com/Thamico/todo-webapp#readme"
+}
