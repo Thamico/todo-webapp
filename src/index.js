@@ -1,4 +1,3 @@
-import { updateTodoList } from "./generateTasks";
-import { Task } from "./generateTasks";
+import generateTasks, { addTask } from "./generateTasks";
 
-updateTodoList();
+addTask();

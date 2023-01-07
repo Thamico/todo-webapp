@@ -1,64 +1,43 @@
-// todo-list.js
+// Get the form and the task list
+const form = document.querySelector("form");
+const taskList = document.querySelector("#task-list");
 
-class Task {
-  constructor(title, description, dueDate, priority) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-  }
-
-  getSummary() {
-    return `${this.title}: ${this.description} (Due: ${this.dueDate}, Priority: ${this.priority})`;
-  }
-}
-
-const todoList = [];
-
-const addTaskForm = document.getElementById("add-task-form");
-
-addTaskForm.addEventListener("submit", (event) => {
+// Handle form submission
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const titleInput = document.getElementById("title-input");
-  const descriptionInput = document.getElementById("description-input");
-  const dueDateInput = document.getElementById("due-date-input");
-  const priorityInput = document.getElementById("priority-input");
+  // Get the form data
+  const title = form.elements.title.value;
+  const description = form.elements.description.value;
+  const dueDate = form.elements.dueDate.value;
+  const priority = form.elements.priority.value;
 
-  const task = new Task(
-    titleInput.value,
-    descriptionInput.value,
-    dueDateInput.value,
-    priorityInput.value
-  );
-  todoList.push(task);
+  // Create a new list item for the task
+  const taskItem = document.createElement("li");
+  taskItem.innerHTML = `
+    <h3>${title}</h3>
+    <p>${description}</p>
+    <p>Due: ${dueDate}</p>
+    <p>Priority: ${priority}</p>
+  `;
 
-  titleInput.value = "";
-  descriptionInput.value = "";
-  dueDateInput.value = "";
-  priorityInput.value = "";
+  // Append the task to the task list
+  taskList.appendChild(taskItem);
 
-  updateTodoList();
+  // Reset the form
+  form.reset();
 });
 
-const addTaskButton = document.getElementById("add-task-button");
-addTaskButton.addEventListener("click", () => {
-  addTaskForm.submit();
-  updateTodoList();
-});
+export function addTask(title, description, dueDate, priority) {
+  // Create a new list item for the task
+  const taskItem = document.createElement("li");
+  taskItem.innerHTML = `
+      <h3>${title}</h3>
+      <p>${description}</p>
+      <p>Due: ${dueDate}</p>
+      <p>Priority: ${priority}</p>
+    `;
 
-export const updateTodoList = () => {
-  const todoListContainer = document.getElementById("todo-list");
-  todoListContainer.innerHTML = "";
-
-  for (const task of todoList) {
-    const taskCard = document.createElement("div");
-    taskCard.classList.add("task-card");
-
-    const taskSummary = document.createElement("p");
-    taskSummary.textContent = task.getSummary();
-
-    taskCard.appendChild(taskSummary);
-    todoListContainer.appendChild(taskCard);
-  }
-};
+  // Append the task to the task list
+  taskList.appendChild(taskItem);
+}
