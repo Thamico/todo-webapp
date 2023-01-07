@@ -1,4 +1,4 @@
-function addTask(task, dueDate, priority, description) {
+function task(task, dueDate, priority, description) {
   const todoList = document.querySelector("#content");
 
   // create a new list item
@@ -35,8 +35,16 @@ function addTask(task, dueDate, priority, description) {
   // add the "done" button to the list item
   listItem.appendChild(doneButton);
 
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerHTML = "Delete";
+  deleteBtn.addEventListener("click", () => {
+    listItem.remove();
+  });
+
+  listItem.appendChild(deleteBtn);
+
   // add the list item to the todo list
   todoList.appendChild(listItem);
 }
 
-export default addTask;
+export default task;

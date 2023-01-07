@@ -1,4 +1,4 @@
-import addTask from "./addTask";
+import task from "./task";
 
 const submitBtn = document.querySelector("#submitBtn");
 
@@ -16,7 +16,7 @@ submitBtn.addEventListener("click", () => {
   const priorityInput = document.getElementById("priority");
   const priority = priorityInput.value;
 
-  addTask(title, dueDate, priority, description);
+  task(title, dueDate, priority, description);
 
   document.querySelector("form").reset();
 });
