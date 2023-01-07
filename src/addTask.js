@@ -9,7 +9,7 @@ function addTask(task, dueDate, priority, description) {
     `;
 
   // add the new list item to the to-do list
-  const todoList = document.querySelector("#content");
+  const todoList = document.getElementById("content");
   todoList.appendChild(listItem);
 }
 
