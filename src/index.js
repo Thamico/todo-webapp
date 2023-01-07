@@ -2,22 +2,21 @@ import addTask from "./addTask";
 
 const submitBtn = document.querySelector("#submitBtn");
 
-submitBtn.addEventListener("click", function (e) {
-  e.preventDefault;
-  const taskInput = document.getElementById("title");
-  const dueDateInput = document.querySelector("#due-date");
-  const priorityInput = document.querySelector("#priority");
-  const descriptionInput = document.querySelector("#description");
+submitBtn.addEventListener("click", () => {
+  const titleInput = document.getElementById("title");
 
-  const task = taskInput.value;
-  const dueDate = dueDateInput.value;
-  const priority = priorityInput.value;
+  const title = titleInput.value;
+
+  const descriptionInput = document.getElementById("description");
   const description = descriptionInput.value;
 
-  console.log(task);
-  console.log(dueDate);
-  console.log(priority);
-  console.log(description);
+  const dueDateInput = document.getElementById("due-date");
+  const dueDate = dueDateInput.value;
 
-  addTask(task, dueDate, priority, description);
+  const priorityInput = document.getElementById("priority");
+  const priority = priorityInput.value;
+
+  addTask(title, dueDate, priority, description);
+
+  document.querySelector("form").reset();
 });

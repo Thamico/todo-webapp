@@ -1,16 +1,16 @@
 function addTask(task, dueDate, priority, description) {
+  const todoList = document.querySelector("#content");
+  console.log(todoList);
   // create a new list item
-  const listItem = document.createElement("li");
-  listItem.innerHTML = `
-      <span>${task}</span>
-      <span>${dueDate}</span>
-      <span>${priority}</span>
-      <span>${description}</span>
-    `;
+  const listItem = document.createElement("div");
+  listItem.innerHTML =
+    task + " " + dueDate + " " + priority + " " + description;
 
-  // add the new list item to the to-do list
-  const todoList = document.getElementById("content");
+  console.log(listItem);
+
   todoList.appendChild(listItem);
+
+  console.log(todoList);
 }
 
 export default addTask;
