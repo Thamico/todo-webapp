@@ -4,7 +4,7 @@ const submitBtn = document.querySelector("#submitBtn");
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault;
-  const taskInput = document.querySelector("#title");
+  const taskInput = document.getElementById("title");
   const dueDateInput = document.querySelector("#due-date");
   const priorityInput = document.querySelector("#priority");
   const descriptionInput = document.querySelector("#description");
